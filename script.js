@@ -64,6 +64,7 @@ const searchInput = document.getElementById('searchInput');
 const movieModal = document.getElementById('movieModal');
 const closeModal = document.getElementById('closeModal');
 const loading = document.getElementById('loading');
+const topRatedGrid = document.getElementById('topRatedGrid');
 
 // Initialize the website
 function init() {
@@ -71,6 +72,7 @@ function init() {
     setTimeout(() => {
         hideLoading();
         renderMovies(movies);
+        renderTopRatedMovies();
     }, 1000);
 }
 
@@ -78,12 +80,14 @@ function init() {
 function showLoading() {
     loading.style.display = 'block';
     moviesGrid.style.display = 'none';
+    topRatedGrid.style.display = 'none';
 }
 
 // Hide loading animation
 function hideLoading() {
     loading.style.display = 'none';
     moviesGrid.style.display = 'grid';
+    topRatedGrid.style.display = 'grid';
 }
 
 // Render movies to the grid
@@ -112,6 +116,36 @@ function renderMovies(movieList) {
         
         movieCard.addEventListener('click', () => openModal(movie));
         moviesGrid.appendChild(movieCard);
+    });
+}
+
+// Render top-rated movies (movies with rating >= 4.7)
+function renderTopRatedMovies() {
+    topRatedGrid.innerHTML = '';
+    const topRatedMovies = movies.filter(movie => movie.rating >= 4.7).slice(0, 3);
+    
+    topRatedMovies.forEach((movie, index) => {
+        const movieCard = document.createElement('div');
+        movieCard.className = 'movie-card top-rated-card';
+        movieCard.style.animationDelay = `${index * 0.1}s`;
+        
+        movieCard.innerHTML = `
+            <div class="movie-poster">${movie.poster}</div>
+            <div class="movie-info">
+                <h3 class="movie-title">${movie.title}</h3>
+                <div class="movie-meta">
+                    <span class="genre">${movie.genre} • ${movie.year}</span>
+                    <div class="rating">
+                        <span class="stars">${generateStars(movie.rating)}</span>
+                        <span>${movie.rating}</span>
+                    </div>
+                </div>
+                <p class="movie-description">${movie.description.substring(0, 120)}...</p>
+            </div>
+        `;
+        
+        movieCard.addEventListener('click', () => openModal(movie));
+        topRatedGrid.appendChild(movieCard);
     });
 }
 
@@ -156,11 +190,22 @@ function closeMovieModal() {
 function submitReview() {
     const reviewText = document.getElementById('reviewText').value.trim();
     if (reviewText) {
-        // Simulate review submission
         alert('Thank you for your review! Your feedback has been submitted.');
         closeMovieModal();
     } else {
         alert('Please write a review before submitting.');
+    }
+}
+
+// Newsletter subscription
+function subscribeNewsletter() {
+    const email = document.getElementById('newsletterEmail').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && emailRegex.test(email)) {
+        alert('Thank you for subscribing to our newsletter!');
+        document.getElementById('newsletterEmail').value = '';
+    } else {
+        alert('Please enter a valid email address.');
     }
 }
 
@@ -182,6 +227,7 @@ function searchMovies() {
     setTimeout(() => {
         hideLoading();
         renderMovies(filteredMovies);
+        renderTopRatedMovies();
     }, 300);
 }
 

@@ -111,6 +111,35 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* Top Rated Section */
+.top-rated-section {
+    padding: 3rem 0;
+}
+
+.top-rated-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.top-rated-card {
+    position: relative;
+}
+
+.top-rated-card::before {
+    content: 'Top Rated';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffd700;
+    color: #1a1a1a;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
 /* Movies Grid */
 .movies-section {
     padding: 3rem 0;
@@ -309,6 +338,63 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.newsletter {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.newsletter h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    width: 70%;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(40, 40, 40, 0.9);
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -347,7 +433,8 @@ nav {
         font-size: 2.5rem;
     }
 
-    .movies-grid {
+    .movies-grid,
+    .top-rated-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
     }
@@ -360,6 +447,15 @@ nav {
     .section-title {
         font-size: 2rem;
     }
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-input {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -367,7 +463,8 @@ nav {
         font-size: 2rem;
     }
 
-    .movies-grid {
+    .movies-grid,
+    .top-rated-grid {
         grid-template-columns: 1fr;
     }
 

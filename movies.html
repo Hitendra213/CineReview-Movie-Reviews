@@ -20,6 +20,15 @@
     </header>
 
     <main>
+        <section class="top-rated-section">
+            <div class="container">
+                <h2 class="section-title">Top Rated Movies</h2>
+                <div class="top-rated-grid" id="topRatedGrid">
+                    <!-- Top rated movies will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
         <section class="movies-section">
             <div class="container">
                 <h2 class="section-title">All Movies</h2>
@@ -35,21 +44,37 @@
                 </div>
             </div>
         </section>
-    <!-- Modal -->
-    <div class="modal" id="movieModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">×</span>
-            <h2 class="modal-title" id="modalTitle"></h2>
-            <div class="modal-rating" id="modalRating"></div>
-            <p class="modal-description" id="modalDescription"></p>
-            <div class="review-form">
-                <h3>Write a Review</h3>
-                <textarea placeholder="Share your thoughts about this movie..." id="reviewText"></textarea>
-                <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+
+        <!-- Modal -->
+        <div class="modal" id="movieModal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">×</span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-rating" id="modalRating"></div>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="review-form">
+                    <h3>Write a Review</h3>
+                    <textarea placeholder="Share your thoughts about this movie..." id="reviewText"></textarea>
+                    <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+                </div>
             </div>
         </div>
-    </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest movie reviews and recommendations straight to your inbox!</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email..." id="newsletterEmail">
+                    <button class="submit-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+            <p class="footer-text">© 2025 CineReview. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

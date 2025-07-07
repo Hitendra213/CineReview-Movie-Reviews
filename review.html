@@ -23,43 +23,34 @@
         <section class="reviews-section">
             <div class="container">
                 <h2 class="section-title">Movie Reviews</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <h3 class="review-title">The Stellar Journey</h3>
-                        <div class="review-meta">
-                            <span>By John Doe • Sci-Fi • 2024</span>
-                            <div class="rating">
-                                <span class="stars">★★★★☆</span>
-                                <span>4.8</span>
-                            </div>
-                        </div>
-                        <p class="review-text">An awe-inspiring adventure that takes you to the stars. The visuals are stunning, and the story is deeply moving. A must-watch for sci-fi fans!</p>
-                    </div>
-                    <div class="review-card">
-                        <h3 class="review-title">Midnight in Paris</h3>
-                        <div class="review-meta">
-                            <span>By Jane Smith • Romance • 2023</span>
-                            <div class="rating">
-                                <span class="stars">★★★★☆</span>
-                                <span>4.5</span>
-                            </div>
-                        </div>
-                        <p class="review-text">A beautifully crafted love story set in the magical city of Paris. The chemistry between the leads is electric!</p>
-                    </div>
-                    <div class="review-card">
-                        <h3 class="review-title">The Last Samurai's Honor</h3>
-                        <div class="review-meta">
-                            <span>By Alex Brown • Action • 2024</span>
-                            <div class="rating">
-                                <span class="stars">★★★★☆</span>
-                                <span>4.7</span>
-                            </div>
-                        </div>
-                        <p class="review-text">Action-packed and emotionally charged. The samurai's journey is both thrilling and heartfelt.</p>
-                    </div>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search reviews by movie or reviewer..." id="searchInput">
+                </div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading reviews...</p>
+                </div>
+                <div class="reviews-grid" id="reviewsGrid">
+                    <!-- Reviews will be populated by JavaScript -->
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest movie reviews and recommendations straight to your inbox!</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email..." id="newsletterEmail">
+                    <button class="submit-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+            <p class="footer-text">© 2025 CineReview. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="review.js"></script>
 </body>
 </html>

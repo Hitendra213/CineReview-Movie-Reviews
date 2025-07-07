@@ -30,6 +30,35 @@
                 </div>
             </div>
         </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Our Team</h2>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading team...</p>
+                </div>
+                <div class="team-grid" id="teamGrid">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest movie reviews and recommendations straight to your inbox!</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email..." id="newsletterEmail">
+                    <button class="submit-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+            </div>
+            <p class="footer-text">© 2025 CineReview. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="about.js"></script>
 </body>
 </html>
