@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineReview - About</title>
-    <link rel="stylesheet" href="about.css">
+    <title>CineReview - Rankings</title>
+    <link rel="stylesheet" href="rank.css">
 </head>
 <body>
     <header>
@@ -21,26 +21,23 @@
     </header>
 
     <main>
-        <section class="about-section">
+        <section class="rankings-section">
             <div class="container">
-                <h2 class="section-title">About CineReview</h2>
-                <div class="about-content">
-                    <p>Welcome to CineReview, your ultimate destination for movie reviews and ratings. Our mission is to help movie enthusiasts discover their next favorite film through honest, insightful reviews and a vibrant community of cinephiles.</p>
-                    <p>Founded in 2023, CineReview aims to provide a platform where users can explore a wide range of movies, share their thoughts, and connect with others who share their passion for cinema. Whether you're a fan of blockbuster action films, indie dramas, or classic romances, we've got you covered.</p>
-                    <p>Join us today and start exploring the world of movies like never before!</p>
+                <h2 class="section-title">Movie Rankings</h2>
+                <div class="filter-container">
+                    <input type="text" class="search-bar" placeholder="Search movies..." id="searchInput">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="rating">Sort by Rating (High to Low)</option>
+                        <option value="year">Sort by Year (Newest First)</option>
+                        <option value="title">Sort by Title (A-Z)</option>
+                    </select>
                 </div>
-            </div>
-        </section>
-
-        <section class="team-section">
-            <div class="container">
-                <h2 class="section-title">Our Team</h2>
                 <div class="loading" id="loading">
                     <div class="spinner"></div>
-                    <p>Loading team...</p>
+                    <p>Loading rankings...</p>
                 </div>
-                <div class="team-grid" id="teamGrid">
-                    <!-- Team members will be populated by JavaScript -->
+                <div class="rankings-grid" id="rankingsGrid">
+                    <!-- Movies will be populated by JavaScript -->
                 </div>
             </div>
         </section>
@@ -60,6 +57,6 @@
         </div>
     </footer>
 
-    <script src="about.js"></script>
+    <script src="rank.js"></script>
 </body>
 </html>
