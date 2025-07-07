@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineReview - Movies</title>
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🎬 CineReview</a>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./movies.html">Movies</a></li>
+                <li><a href="./review.html">Reviews</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="movies-section">
+            <div class="container">
+                <h2 class="section-title">All Movies</h2>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search for movies..." id="searchInput">
+                </div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading movies...</p>
+                </div>
+                <div class="movies-grid" id="moviesGrid">
+                    <!-- Movies will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    <!-- Modal -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">×</span>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-rating" id="modalRating"></div>
+            <p class="modal-description" id="modalDescription"></p>
+            <div class="review-form">
+                <h3>Write a Review</h3>
+                <textarea placeholder="Share your thoughts about this movie..." id="reviewText"></textarea>
+                <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
